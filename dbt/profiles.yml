@@ -1,0 +1,7 @@
+lendingclub:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../warehouse/lendingclub.duckdb
+      threads: 4

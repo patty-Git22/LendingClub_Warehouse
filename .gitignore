@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+
+.env
+
+# Data and warehouse (rebuilt by the pipeline - too large for GitHub)
+data/
+warehouse/
+*.duckdb
+*.duckdb.wal
+*.parquet
+*.csv.gz
+
+# Pipeline outputs
+outputs/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml
+logs/
+
+# Dagster
+.dagster_home/
+.tmp_dagster_home*/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db

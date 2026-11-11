@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: fct_loans
+    description: One row per completed LendingClub loan.
+    columns:
+      - name: loan_id
+        tests: [unique, not_null]
+      - name: is_default
+        tests:
+          - not_null
+          - accepted_values: { values: [0, 1], quote: false }
+      - name: grade_key
+        tests:
+          - relationships: { to: ref('dim_grade'), field: grade_key }
+      - name: purpose_key
+        tests:
+          - relationships: { to: ref('dim_purpose'), field: purpose_key }
+  - name: dim_grade
+    columns:
+      - name: grade_key
+        tests: [unique, not_null]
+      - name: grade
+        tests:
+          - accepted_values: { values: ['A','B','C','D','E','F','G'] }
